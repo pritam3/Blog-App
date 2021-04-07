@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+    <title>Document</title>
+    <style>
+        .logo {
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            /* align-items: center; */
+            align-content: center;
+            padding: 0px 10px;
+            font-weight: 800;             
+            box-sizing: border-box;            
+            background-color: white;
+        }
+        .header{
+            transition: 0.2s;
+        }
+        .logo {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-top sticky-top bg-dark shadow-lg" >
+        <nav class="container-fluid navbar navbar-light">
+            <a class="navbar-brand logo" href="/">BLOG APP ㋛</a>
+        </nav>
+    </div>
+</body>
+</html>
