@@ -22,28 +22,40 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+        ::-webkit-scrollbar {
+            display:-webkit-inline-box;
+            background-color: #F5F5F5;
+            border-radius: 10px;
+            width: 12px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #82B1FF;
+            border-radius: 10px;
+        }
     </style> 
 </head>
 <body>
     <%- include('header') %>
     <div class="container">        
         <a href="/articles/new" class="btn btn-success mt-4"> New Blog</a>
-    
+
         <% articles.forEach(article => { %>
-        <div class="card shadow-lg mt-4">
-            <div class="card-body">
-                <h4 class="card-title"><%= article.title %></h4>
-                <div class="card-subtitle text-muted mb-2">
-                    📅<%= article.createdAt.toDateString() %>
-                </div>
-                <div class="card-text mb-2"><%= article.description %></div>
+            <div class="card shadow-lg mt-4">
+                <div class="card-body">
+                    <h4 class="card-title"><%= article.title %></h4>
+                    <div class="card-subtitle text-muted mb-2">
+                        📅<%= article.createdAt.toDateString() %>
+                    </div>
+
+                    <div class="card-text mb-2"><%= article.description %></div>
+                    
                     <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
                     <a href="articles/edit/<%= article.id %>" class="btn btn-info">✎ Edit</a>
                     <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
                         <button type="submit" class="btn btn-danger">✂Delete</button>
                     </form>
-            </div>
-        </div>
+                </div>
+            </div>        
     <% }) %>
     </div>
     <%- include('footer') %>
