@@ -7,10 +7,13 @@ const Darkmode       = require('darkmode-js')
 
 var app = express()
 
-mongoose.connect('mongodb://localhost/blog',{
+mongoose.connect('mongodb+srv://pratikdhoke9:Pratik9787@cluster0.uf42kqt.mongodb.net/?retryWrites=true&w=majority',{
  useNewUrlParser: true, useUnifiedTopology: true,
- useCreateIndex: true   
+ useCreateIndex: true 
+}).then(()=>{
+    console.warn("db connection");
 })
+
 
 // const darkmode = new Darkmode()
 // darkmode.showWidget()
